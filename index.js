@@ -1,0 +1,7 @@
+const {PCA} = require("ml-pca")
+// const dataset = require("ml-dataset-iris").getNumbers()
+const dataset = require("@randkid/size")
+const d = dataset.f_dropna.data.splice(0, 5)
+//console.log(d)
+const pca = new PCA(d)
+console.log(pca.invert(pca.predict(d.splice(0,1))))
