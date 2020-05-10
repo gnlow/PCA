@@ -14,6 +14,7 @@
   "homepage": "https://github.com/gnlow/PCA#readme",
   "dependencies": {
     "@randkid/size": "^0.2.2",
+    "gaussian": "^1.1.0",
     "ml-dataset-iris": "^1.1.1",
     "ml-pca": "^4.0.1"
   }

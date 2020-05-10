@@ -1,7 +1,9 @@
 const {PCA} = require("ml-pca")
-// const dataset = require("ml-dataset-iris").getNumbers()
+const gaussian = require("gaussian")
 const dataset = require("@randkid/size")
 const d = dataset.f_dropna.data.splice(0, 5)
-//console.log(d)
 const pca = new PCA(d)
-console.log(pca.invert(pca.predict(d.splice(0,1))))
+const distributions = 
+    pca.getStandardDeviations()
+        .map(σ => gaussian(0, σ**2))
+console.log( pca.invert([distributions.map(d => d.ppf(Math.random()))]) )
